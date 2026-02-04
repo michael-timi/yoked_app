@@ -13,5 +13,10 @@ class AppConstants {
   static const Duration shortAnimation = Duration(milliseconds: 200);
   static const Duration mediumAnimation = Duration(milliseconds: 300);
   static const Duration longAnimation = Duration(milliseconds: 500);
+
+  // Validation
+  static const int minPasswordLength = 8;
+  static const int maxNameLength = 100;
+  static const int maxEmailLength = 254;
 }
 
