@@ -79,7 +79,6 @@ class StartScreen extends StatelessWidget {
                     'Begin Together',
                     onPressed: () => Get.toNamed(AppRoutes.register),
                     labelColor: AppColors.white,
-                    labelFontSize: Get.height * 0.018,
                   ),
                 ),
                 Gap(AppSizes.spacingSmall),
@@ -87,12 +86,12 @@ class StartScreen extends StatelessWidget {
                 Text.rich(
                   textAlign: TextAlign.center,
                   TextSpan(
-                    text: "Already have an account?",
-                    style: textStyle,
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         Get.toNamed(AppRoutes.login);
                       },
+                    text: "Already have an account?",
+                    style: textStyle,
                     children: <TextSpan>[
                       TextSpan(
                         text: " Sign In",

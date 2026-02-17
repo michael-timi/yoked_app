@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../theme/app_colors.dart';
 import '../utils/app_sizes.dart';
 import 'app_text.dart';
@@ -65,6 +66,7 @@ class AppButton extends StatelessWidget {
 
   final String label;
   final VoidCallback? onPressed;
+
   /// When non-null, shown instead of [label] (e.g. for icon-only buttons).
   final Widget? child;
   final ButtonStyle? style;
@@ -96,7 +98,7 @@ class AppButton extends StatelessWidget {
     label,
     color: labelColor ?? foregroundColor ?? AppColors.white,
     fontWeight: labelFontWeight,
-    fontSize: labelFontSize,
+    fontSize: labelFontSize ?? Get.height * 0.018,
   );
 
   Widget get _content => child ?? _label;
@@ -111,6 +113,7 @@ class AppButton extends StatelessWidget {
             backgroundColor: WidgetStateProperty.all(
               backgroundColor ?? AppColors.black,
             ),
+
             foregroundColor: WidgetStateProperty.all(
               foregroundColor ?? AppColors.white,
             ),

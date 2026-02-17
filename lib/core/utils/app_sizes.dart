@@ -18,12 +18,13 @@ abstract final class AppSizes {
   static double get fontSizeTitle => Get.width * 0.055;
 
   /// Border radius (buttons, cards)
-  static double get radius => Get.width * 0.03;
+  static double get radius => Get.width * 0.06;
+
   /// Text field radius (pill-like)
-  static double get textFieldRadius => Get.height * 0.028;
+  static double get textFieldRadius => Get.height * 0.02;
 
   /// Button padding
-  static double get buttonPadding => Get.height * 0.02;
+  static double get buttonPadding => Get.height * 0.015;
 
   /// Logo / image sizes (height-based)
   static double get logoSmall => Get.height * 0.15;

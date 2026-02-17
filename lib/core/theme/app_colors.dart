@@ -5,13 +5,31 @@ class AppColors {
   static const Color primaryLight = Color(0xFFF5F5EC);
   static const Color secondary = Color(0xFFFDB022);
   static const Color text = Color(0xFF002A52);
-  static const Color green = Color(0xFF0B7A75);
+  static const Color green = Color(0xFF34C759);
   static const Color red = Color(0xFFB3261E);
+  static const Color orange = Color(0xFFFF9341);
+  static const Color purple = Color(0xFF6D26FE);
+  static const Color cyan = Color(0xFF00C0E8);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF212529);
 
+  // Additional colors for focus areas and UI elements
+  static const Color pink = Color(0xFFEC4899);
+  static const Color teal = Color(0xFF14B8A6);
+  static const Color indigo = Color(0xFF6366F1);
+  static const Color amber = Color(0xFFF59E0B);
+  static const Color rose = Color(0xFFF43F5E);
+  static const Color emerald = Color(0xFF10B981);
+  static const Color sky = Color(0xFF0EA5E9);
+  static const Color violet = Color(0xFF8B5CF6);
+  static const Color fuchsia = Color(0xFFD946EF);
+  static const Color lime = Color(0xFF84CC16);
+  static const Color slate = Color(0xFF64748B);
+  static const Color activeNavBarColor = Color(0xFFBA944C);
+
   /// Screen background (light cream)
   static const Color surfaceLight = Color(0xFFF8F6F1);
+
   /// Text field fill and borders
   static const Color textFieldFill = Color(0xFFF0EEEA);
   static const Color textFieldBorder = Color(0xFFE0DDD8);

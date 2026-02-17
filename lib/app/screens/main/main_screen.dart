@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import '../../../core/constants/app_svg_assets.dart';
+import '../../../core/theme/app_colors.dart';
 import '../home/home_screen.dart';
 import '../pray/pray_screen.dart';
 import '../plan/plan_screen.dart';
@@ -24,38 +27,61 @@ class MainScreen extends StatelessWidget {
     return Obx(
       () => Scaffold(
         body: IndexedStack(index: nav.currentIndex.value, children: _tabs),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: nav.currentIndex.value,
-          onDestinationSelected: nav.changeTab,
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Icons.home_outlined),
-              selectedIcon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.favorite_outline),
-              selectedIcon: Icon(Icons.favorite),
-              label: 'Pray',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.calendar_today_outlined),
-              selectedIcon: Icon(Icons.calendar_today),
-              label: 'Plan',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.timer_outlined),
-              selectedIcon: Icon(Icons.timer),
-              label: 'Fast',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.trending_up_outlined),
-              selectedIcon: Icon(Icons.trending_up),
-              label: 'Progress',
-            ),
-          ],
+        bottomNavigationBar: NavigationBarTheme(
+          data: NavigationBarThemeData(
+            indicatorColor: Colors.transparent,
+            labelTextStyle: WidgetStateProperty.resolveWith((states) {
+              return TextStyle(
+                color: states.contains(WidgetState.selected)
+                    ? AppColors.activeNavBarColor
+                    : null,
+              );
+            }),
+            iconTheme: WidgetStateProperty.resolveWith((states) {
+              return IconThemeData(
+                color: states.contains(WidgetState.selected)
+                    ? AppColors.activeNavBarColor
+                    : null,
+              );
+            }),
+          ),
+          child: NavigationBar(
+            selectedIndex: nav.currentIndex.value,
+            onDestinationSelected: nav.changeTab,
+            labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+            destinations: [
+              _navDest(asset: AppSvgAssets.homeNavbar, label: 'Home'),
+              _navDest(asset: AppSvgAssets.prayNavbar, label: 'Pray'),
+              _navDest(asset: AppSvgAssets.plansNavbar, label: 'Plan'),
+              _navDest(asset: AppSvgAssets.fastNavbar, label: 'Fast'),
+              _navDest(asset: AppSvgAssets.progressNavbar, label: 'Progress'),
+            ],
+          ),
         ),
       ),
+    );
+  }
+
+  static NavigationDestination _navDest({
+    required String asset,
+    required String label,
+  }) {
+    return NavigationDestination(
+      icon: SvgPicture.asset(
+        asset,
+        width: Get.height * 0.03,
+        height: Get.height * 0.03,
+      ),
+      selectedIcon: SvgPicture.asset(
+        asset,
+        width: Get.height * 0.03,
+        height: Get.height * 0.03,
+        colorFilter: const ColorFilter.mode(
+          AppColors.activeNavBarColor,
+          BlendMode.srcIn,
+        ),
+      ),
+      label: label,
     );
   }
 }

@@ -21,4 +21,11 @@ abstract final class AppPngAssets {
   static const String openBook = '$_base/open_book.png';
   static const String setGoal = '$_base/set_goal.png';
   static const String speechBalloon = '$_base/speech_balloon.png';
+
+  // Topographics
+  static const String topographic1 = '$_base/topographic1.png';
+  static const String topographic2 = '$_base/topographic2.png';
+  static const String topographic3 = '$_base/topographic3.png';
+  static const String topographic4 = '$_base/topographic4.png';
+  static const String topographic5 = '$_base/topographic5.png';
 }

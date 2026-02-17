@@ -25,4 +25,17 @@ abstract final class AppSvgAssets {
   static const String startFast = '$_base/start_fast.svg';
   static const String success = '$_base/success.svg';
   static const String couple = '$_base/couple.svg';
+  static const String bell = '$_base/bell.svg';
+
+  // Form / UI
+  static const String selectRadio = '$_base/select_radio.svg';
+  static const String unselectRadio = '$_base/unselect_radio.svg';
+  static const String peopleIcon = '$_base/people_icon.svg';
+
+  static const String topographic1 = '$_base/topographic1.svg';
+  static const String topographic2 = '$_base/topographic2.svg';
+
+  static const String trendingUp = '$_base/trending-up.svg';
+  static const String lock = '$_base/lock.svg';
+  static const String champion = '$_base/champion.svg';
 }
